@@ -40,6 +40,10 @@
     },
 
     {
-        
+        "card number":6,
+        "header text":"Introductory Text.  This is a placeholder for the introductory text.",
+        "next":"standard",
+        "helper text":null,
+        "nav button": "standard"
     }
 ]

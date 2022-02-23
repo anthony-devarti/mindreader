@@ -25,8 +25,8 @@ class Page {
     }
 
     class Basic extends Page {
-        header = text
-        next = /*goes to next page*/
+        header = "Pick a number from 01-99"
+        next = "Next"/*goes to next page*/
         helper = reminderText
         nav = button/* refresh icon goes to page 1*/
     }
@@ -42,8 +42,8 @@ class Page {
         header = symbol + map[100]
         next = hidden
         helper = "your Symbol is:" + symbol
-        //the symbols should change each time, by randomizing the symbols assigned to each number.  Some sort of object with numberical properties?
-        //somehow, don't show the same symbol as the last time
+        //the symbols should change each time, by randomizing the symbols assigned to each number.  Some sort of object with numerical properties?
+        //somehow, don't show the same symbol as the last time, count on randomness?
         nav = button/*refresh icon goes to page 1*/
     }
 
@@ -52,5 +52,6 @@ Symbols [100
     //a shuffler function like this? https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 ]
 
-
+const headerText = document.getElementById("header")
+headerText.innerHTML ="I can read your mind"
 

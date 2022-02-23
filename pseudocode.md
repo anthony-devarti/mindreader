@@ -55,6 +55,7 @@ Symbols [
     //case breaks?
     //probably want to get everything working with this section just being plain text at first, then work on this part later
     //a shuffler function like this? https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+    //no need to make each number show a unique symbol.  They can all be truly randomized and associated to a specific number.
 ]
 
 shuffler(){
@@ -64,4 +65,12 @@ shuffler(){
 scroller() {
 
 }
+let page1 = new Page()
+page1.header = "I can Read your Mind"
+page1.helper = "This is helper text."
 
+let page2 = new Page()
+
+[page1, page2, ]
+
+//
