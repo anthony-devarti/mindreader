@@ -39,7 +39,7 @@ class Page {
     }
 
     class End extends Page{
-        header = symbol + map[100 symbols]
+        header = symbol + map[100]
         next = hidden
         helper = "your Symbol is:" + symbol
         //the symbols should change each time, by randomizing the symbols assigned to each number.  Some sort of object with numberical properties?
@@ -47,7 +47,7 @@ class Page {
         nav = button/*refresh icon goes to page 1*/
     }
 
-Symbols [
+Symbols [100
         //how to go about scrambling these?
     //a shuffler function like this? https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 ]

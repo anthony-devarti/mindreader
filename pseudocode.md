@@ -52,6 +52,8 @@ Symbols [
     "9":"("
     //how to go about scrambling these?
     //this apparently needs to be 100 symbols
+    //case breaks?
+    //probably want to get everything working with this section just being plain text at first, then work on this part later
     //a shuffler function like this? https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
 ]
 
