@@ -128,10 +128,10 @@ function page6(){
     hide("scroll");
     reveal("headerText");
     let headerText = document.getElementById("headerText")
-    headerText.innerHTML = "&"
+    headerText.innerHTML = nineSymbol
     hide("next")
     let helper = document.getElementById("helper")
-    helper.innerHTML = "Your symbol is: &"
+    helper.innerHTML = "Your symbol is: \n" + nineSymbol;
     let nav = document.getElementById("nav")
     nav.innerHTML = "Return";
     eventClear("nav");
@@ -158,19 +158,20 @@ function mod9(x) {
 function generateArr() {
     for (i=0; i<100; i++) {
         arr.push(i);
+        arr.toString();
     }
     //something here that writes random symbols next to everything.
     //replace the @ symbol with the result of the random symbol
     
-    arr = arr.map(i => "\n" + randomSymbol() + i);
-    
+    // arr = arr.map(i => "#" + i);
+    arr = arr.map(i=> "<br>" + randomSymbol() + ' : ' + i)
     //something here that writes a random symbol to all numbers divisible by 9.
     // for (element of arr) {
     //     if (element%9===0){
             
     //     }
         
-    // }
+    
 }
 
 function getRandomInt(max) {
@@ -185,5 +186,4 @@ function randomSymbol(){
 
 
 page1();
-
 
