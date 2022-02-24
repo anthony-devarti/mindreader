@@ -77,6 +77,6 @@ page2.next = "Next"
 page2.helper = "When you have your number click next
 page2.nav = refresh
 
-[page1, page2, page3, page4, page5, page6]
+let pages = [page1, page2, page3, page4, page5, page6]
 
 //
