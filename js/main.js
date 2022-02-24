@@ -155,24 +155,22 @@ function mod9(x) {
     return true
 }
 
-function generateArr() {
-    for (i=0; i<100; i++) {
-        arr.push(i);
-        arr.toString();
-    }
-    //something here that writes random symbols next to everything.
+
+//something here that writes random symbols next to everything.
     //replace the @ symbol with the result of the random symbol
     
     // arr = arr.map(i => "#" + i);
-    arr = arr.map(i=> "<br>" + randomSymbol() + ' : ' + i)
-    //something here that writes a random symbol to all numbers divisible by 9.
-    // for (element of arr) {
-    //     if (element%9===0){
-            
-    //     }
+function generateArr() {
+    for (i=0; i<100; i++) {
+        if (i%9===0) {
+            i=> "<br>" + nineSymbol + ' : ' + i;
+            } else {
+                i=> "<br>" + randomSymbol() + ' : ' + i;
+            }
+            arr.push(i);        
+        }
         
-    
-}
+    }
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
