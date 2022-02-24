@@ -162,12 +162,19 @@ function mod9(x) {
     // arr = arr.map(i => "#" + i);
 function generateArr() {
     for (i=0; i<100; i++) {
-        if (i%9===0) {
-            i=> "<br>" + nineSymbol + ' : ' + i;
+        
+            let nineSymbol = symbols[0];
+            // arr.map(i => "<br>" + nineSymbol + ' : ' + i);
+            // } else {
+            //     arr.map(i=> "<br>" + randomSymbol() + ' : ' + i);
+            // }
+            // arr.push(i);        
+            let n= '';
+            if (i%9===0) {
+                arr.map(i => "<br>" + nineSymbol + " : " + i)
             } else {
-                i=> "<br>" + randomSymbol() + ' : ' + i;
+                arr.map(i => "<br>" + Math.floor(Math.random)*9)
             }
-            arr.push(i);        
         }
         
     }
