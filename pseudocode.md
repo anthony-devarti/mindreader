@@ -67,10 +67,16 @@ scroller() {
 }
 let page1 = new Page()
 page1.header = "I can Read your Mind"
-page1.helper = "This is helper text."
+page1.next = hidden //a function to hide this button
+page1.helper = hidden
+page1.nav = "GO"
 
 let page2 = new Page()
+page2.header = "Pick a number from 01-99"
+page2.next = "Next"
+page2.helper = "When you have your number click next
+page2.nav = refresh
 
-[page1, page2, ]
+[page1, page2, page3, page4, page5, page6]
 
 //
