@@ -24,23 +24,22 @@ class Page {
 //case break to differentiate between page numbers?
 
 
+
 function page1() {
-    let headerText = document.getElementById("headerText")
-    headerText.innerHTML = "I can read your mind"
-    let next = document.getElementById("next")
-    next.innerHTML = "hidden" //replace this with the way to make the button hidden
-    let helper = document.getElementById("helper")
-    helper.innerHTML = "hidden"  //replace this with the way to make the text hidden
-    let nav = document.getElementById("nav")
+    let headerText = document.getElementById("headerText");
+    headerText.innerHTML = "I can read your mind";
+    let next = document.getElementById("next").style.display='none';
+    let helper = document.getElementById("helper").style.display='none';
+    let nav = document.getElementById("nav");
     nav.innerHTML = "Go";
-    document.getElementById("nav").removeEventListener("click", page1)
-    document.getElementById("nav").addEventListener("click", page2)
+    document.getElementById("nav").removeEventListener("click", page1);
+    document.getElementById("nav").addEventListener("click", page2);
 }
 
 function page2() {
-    let headerText = document.getElementById("headerText")
-    headerText.innerHTML = "Pick a number from 01-99"
-    let next = document.getElementById("next")
+    let headerText = document.getElementById("headerText");
+    headerText.innerHTML = "Pick a number from 01-99";
+    let next = document.getElementById("next");
     next.innerHTML = "Next"
     document.getElementById("next").addEventListener("click", page3)
     let helper = document.getElementById("helper")
@@ -92,8 +91,7 @@ function page5() {
 function page6(){
     let headerText = document.getElementById("headerText")
     headerText.innerHTML = "&"
-    let next = document.getElementById("next")
-    next.innerHTML = "hidden" //replace this with the way to make the button hidden
+    let next = document.getElementById("next").style.display="hide"
     let helper = document.getElementById("helper")
     helper.innerHTML = "Your symbol is: &"
     let nav = document.getElementById("nav")
