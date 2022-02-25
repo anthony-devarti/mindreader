@@ -59,7 +59,7 @@ function page2() {
     reveal("helper");
     helper.innerHTML = "When you have your number, click next";
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<span class="glyphicon glyphicon-refresh"></span>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
