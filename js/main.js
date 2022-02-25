@@ -59,7 +59,7 @@ function page2() {
     reveal("helper");
     helper.innerHTML = "When you have your number, click next";
     let nav = document.getElementById("nav")
-    nav.innerHTML = '<span class="glyphicon glyphicon-refresh"></span>';
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -75,7 +75,7 @@ function page3() {
     let helper = document.getElementById("helper")
     helper.innerHTML = "ex: 14 is 1+4=5"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -91,7 +91,7 @@ function page4() {
     let helper = document.getElementById("helper")
     helper.innerHTML = "Ex: 14-5=9"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -111,7 +111,7 @@ function page5() {
     let helper = document.getElementById("helper")
     helper.innerHTML = "Find your new number. Note the symbol beside the number"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -125,7 +125,7 @@ function page6(){
     let helper = document.getElementById("helper")
     helper.innerHTML = "Your symbol is: \n" + symbols[9];
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }

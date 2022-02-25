@@ -2,9 +2,13 @@
  border-radius: 50%;
  position: absolute;
  bottom: 10px;; right:10px;
- padding: 45px;
+ padding: 35px;
 }
 
 #helper{
     color:rgb(43, 67, 175)
+}
+
+#refresh{
+    size: 30px;
 }
