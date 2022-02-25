@@ -5,14 +5,14 @@ let arr=[]
 
 
 function attachSymbols(){
-for (i=1; i<100; i++){
+for (let i=1; i<100; i++){
     arr = arr.map(i => symbols[i%symbols.length] + " : " + i + "<br>");
     return arr
 }}
 
 function generateArr() {
     
-    for (i=0; i<100; i++) {
+    for (let i=0; i<100; i++) {
         arr.push(i)
         
     }
@@ -26,7 +26,7 @@ function hide(id){
 function reveal(id) {
     document.getElementById(id).style.display="block"
 }
-
+//my solution to trash event listeners to clear them out
 function eventClear(button) {
     document.getElementById(button).removeEventListener("click", page1);
     document.getElementById(button).removeEventListener("click", page2);
@@ -96,7 +96,8 @@ function page4() {
     document.getElementById("nav").addEventListener("click", page1)
 }
 
-function page5() {     
+function page5() {
+    arr = []     
     hide("headerText")
     reveal("scroll")
     generateArr();
@@ -115,15 +116,15 @@ function page5() {
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
-
+//fix symbol number
 function page6(){
     hide("scroll");
     reveal("headerText");
     let headerText = document.getElementById("headerText")
-    headerText.innerHTML = symbols[9]
+    headerText.innerHTML = symbols[0]
     hide("next")
     let helper = document.getElementById("helper")
-    helper.innerHTML = "Your symbol is: \n" + symbols[9];
+    helper.innerHTML = "Your symbol is: \n" + symbols[0];
     let nav = document.getElementById("nav")
     nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
