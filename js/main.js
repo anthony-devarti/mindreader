@@ -1,32 +1,23 @@
-class Page {
-    //these should be empty so they can be filled in by the extenstions
-    constructor(header, next, helper, nav)  {  
-    this.header = header,
-        //font and formatting?  Something else?
-    this.next = next
-        //basic definition of the next button and with no definition
-    this.helper = helper;
-        //font and formatting is universal
-    this.nav = nav
-        /*functions that describe the 2 behaviors the button should have?  maybe this should be left empty here and defined in the subclass instead, since the functions would only be used once anyway*/
-        // go to pg2()
-        // return to pg1()
+let symbols = ["!", "@", "=", "$", "%", "^", "&", "*", "+"];
+
+let arr=[]
+
+// let symbolIndex = getRandomInt(9);
+
+function attachSymbols(){
+for (i=0; i<100; i++){
+    arr = arr.map(i => symbols[i%symbols.length] + " : " + i + "<br>");
+    return arr
+}}
+
+function generateArr() {
+    
+    for (i=0; i<100; i++) {
+        arr.push(i)
+        
     }
-
-
+    return arr;
 }
-// let p1 = new Page
-// Page.header = "I can read your Mind"
-// Page.next = hidden
-// Page.helper = hidden
-// Page.nav = "GO"
-
-//case break to differentiate between page numbers?
-
-
-let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "|"]
-
-let nineSymbol = randomSymbol();
 
 function hide(id){
     document.getElementById(id).style.display="none"
@@ -45,7 +36,6 @@ function eventClear(button) {
     document.getElementById(button).removeEventListener("click", page6);
 };
 
-let arr=[]
 
 function page1() {
     hide("next");
@@ -110,10 +100,12 @@ function page5() {
     hide("headerText")
     reveal("scroll")
     generateArr();
-    let scroll = document.getElementById("scroll")
-    scroll.innerHTML = arr.toString() //replace this with the functioning scroller built earlier. maybe have it reveal a scroll box that was always there. 
-    let next = document.getElementById("next")
-    next.innerHTML = "Reveal"
+    shuffle(symbols);
+    attachSymbols();
+    let scroll = document.getElementById("scroll");
+    scroll.innerHTML = arr.toString();
+    let next = document.getElementById("next");
+    next.innerHTML = "Reveal";
     eventClear("next");
     document.getElementById("next").addEventListener("click", page6)
     let helper = document.getElementById("helper")
@@ -128,65 +120,72 @@ function page6(){
     hide("scroll");
     reveal("headerText");
     let headerText = document.getElementById("headerText")
-    headerText.innerHTML = nineSymbol
+    headerText.innerHTML = symbols[9]
     hide("next")
     let helper = document.getElementById("helper")
-    helper.innerHTML = "Your symbol is: \n" + nineSymbol;
+    helper.innerHTML = "Your symbol is: \n" + symbols[9];
     let nav = document.getElementById("nav")
     nav.innerHTML = "Return";
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
 
-function shuffle(array){
-    let m = array.length, t, i;
-    while (m) {
-        i = Math.floor(Math.random() * m--);
-
-        t = array(m);
-        array[m] = array[i];
-        array[i] = t
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
     }
-    return array
-}
+  
+    return array;
+  }
 
-function mod9(x) {
-    if (x%9 ===0)
-    return true
-}
+// function mod9(x) {
+//     if (x%9 ===0)
+//     return true
+// }
 
 
 //something here that writes random symbols next to everything.
     //replace the @ symbol with the result of the random symbol
     
     // arr = arr.map(i => "#" + i);
-function generateArr() {
-    for (i=0; i<100; i++) {
-        
-            let nineSymbol = symbols[0];
+
+            //let nineSymbol = symbols[0];
             // arr.map(i => "<br>" + nineSymbol + ' : ' + i);
             // } else {
             //     arr.map(i=> "<br>" + randomSymbol() + ' : ' + i);
             // }
-            // arr.push(i);        
-            let n= '';
-            if (i%9===0) {
-                arr.map(i => "<br>" + nineSymbol + " : " + i)
-            } else {
-                arr.map(i => "<br>" + Math.floor(Math.random)*9)
-            }
-        }
+            // arr.push(i);   
+            
+// function choose(arr) {
+
+            
+//     for (i=0; i<100;i++){
+//         arr.map(i => "<br>" + symbols[symbolIndex] + " : " + i)
+//         return arr;
+//     }        
+            
+//         }
         
-    }
+//     }
 
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
-  }
-
-function randomSymbol(){
-    let result = getRandomInt(14);
-    return symbols[result];
-}
+// function getRandomInt(max) {
+//     return Math.floor(Math.random() * max);
+  
+// let nineSymbol = randomSymbol();
+// function randomSymbol(){
+//     let result = getRandomInt(9);
+//     return symbols[result];
+//}
 
 
 
