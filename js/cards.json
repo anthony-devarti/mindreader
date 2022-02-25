@@ -1,0 +1,49 @@
+[
+    {
+        "card number":1,
+        "header text": "Introductory Text.  This is a placeholder for the introductory text.",
+        "next": null,
+        "helper text": null,
+        "nav button":  "standard"
+    },
+
+    {
+        "card number":2,
+        "header text":"Introductory Text.  This is a placeholder for the introductory text.",
+        "next": "standard",
+        "helper text": null,
+        "nav button":"standard"
+    },
+
+    {
+        "card number":3,
+        "header text":"Introductory Text.  This is a placeholder for the introductory text.",
+        "next":"standard",
+        "helper text":null,
+        "nav button": "standard"
+    },
+
+    {
+        "card number":4,
+        "header text":"Introductory Text.  This is a placeholder for the introductory text.",
+        "next":"standard",
+        "helper text": null,
+        "nav button":"standard"
+    },
+
+    {
+        "card number":5,
+        "header text": "Introductory Text.  This is a placeholder for the introductory text.",
+        "next": "standard",
+        "helper text": null,
+        "nav button":"standard"
+    },
+
+    {
+        "card number":6,
+        "header text":"Introductory Text.  This is a placeholder for the introductory text.",
+        "next":"standard",
+        "helper text":null,
+        "nav button": "standard"
+    }
+]
