@@ -1,32 +1,23 @@
-class Page {
-    //these should be empty so they can be filled in by the extenstions
-    constructor(header, next, helper, nav)  {  
-    this.header = header,
-        //font and formatting?  Something else?
-    this.next = next
-        //basic definition of the next button and with no definition
-    this.helper = helper;
-        //font and formatting is universal
-    this.nav = nav
-        /*functions that describe the 2 behaviors the button should have?  maybe this should be left empty here and defined in the subclass instead, since the functions would only be used once anyway*/
-        // go to pg2()
-        // return to pg1()
+let symbols = ["!", "@", "=", "$", "%", "^", "&", "*", "+",];
+
+let arr=[]
+
+
+
+function attachSymbols(){
+for (i=1; i<100; i++){
+    arr = arr.map(i => symbols[i%symbols.length] + " : " + i + "<br>");
+    return arr
+}}
+
+function generateArr() {
+    
+    for (i=0; i<100; i++) {
+        arr.push(i)
+        
     }
-
-
+    return arr;
 }
-// let p1 = new Page
-// Page.header = "I can read your Mind"
-// Page.next = hidden
-// Page.helper = hidden
-// Page.nav = "GO"
-
-//case break to differentiate between page numbers?
-
-
-let symbols = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "+", "=", "|"]
-
-let nineSymbol = randomSymbol();
 
 function hide(id){
     document.getElementById(id).style.display="none"
@@ -45,7 +36,6 @@ function eventClear(button) {
     document.getElementById(button).removeEventListener("click", page6);
 };
 
-let arr=[]
 
 function page1() {
     hide("next");
@@ -69,7 +59,7 @@ function page2() {
     reveal("helper");
     helper.innerHTML = "When you have your number, click next";
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -85,7 +75,7 @@ function page3() {
     let helper = document.getElementById("helper")
     helper.innerHTML = "ex: 14 is 1+4=5"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -101,7 +91,7 @@ function page4() {
     let helper = document.getElementById("helper")
     helper.innerHTML = "Ex: 14-5=9"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -110,16 +100,18 @@ function page5() {
     hide("headerText")
     reveal("scroll")
     generateArr();
-    let scroll = document.getElementById("scroll")
-    scroll.innerHTML = arr.toString() //replace this with the functioning scroller built earlier. maybe have it reveal a scroll box that was always there. 
-    let next = document.getElementById("next")
-    next.innerHTML = "Reveal"
+    shuffle(symbols);
+    attachSymbols();
+    let scroll = document.getElementById("scroll");
+    scroll.innerHTML = arr.toString();
+    let next = document.getElementById("next");
+    next.innerHTML = "Reveal";
     eventClear("next");
     document.getElementById("next").addEventListener("click", page6)
     let helper = document.getElementById("helper")
     helper.innerHTML = "Find your new number. Note the symbol beside the number"
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
@@ -128,60 +120,35 @@ function page6(){
     hide("scroll");
     reveal("headerText");
     let headerText = document.getElementById("headerText")
-    headerText.innerHTML = nineSymbol
+    headerText.innerHTML = symbols[9]
     hide("next")
     let helper = document.getElementById("helper")
-    helper.innerHTML = "Your symbol is: \n" + nineSymbol;
+    helper.innerHTML = "Your symbol is: \n" + symbols[9];
     let nav = document.getElementById("nav")
-    nav.innerHTML = "Return";
+    nav.innerHTML = '<i class="bi bi-arrow-counterclockwise"></i>';
     eventClear("nav");
     document.getElementById("nav").addEventListener("click", page1)
 }
-
-function shuffle(array){
-    let m = array.length, t, i;
-    while (m) {
-        i = Math.floor(Math.random() * m--);
-
-        t = array(m);
-        array[m] = array[i];
-        array[i] = t
+//fischer-yates shuffler
+function shuffle(array) {
+    let currentIndex = array.length,  randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
     }
-    return array
-}
-
-function mod9(x) {
-    if (x%9 ===0)
-    return true
-}
-
-function generateArr() {
-    for (i=0; i<100; i++) {
-        arr.push(i);
-        arr.toString();
-    }
-    //something here that writes random symbols next to everything.
-    //replace the @ symbol with the result of the random symbol
-    
-    // arr = arr.map(i => "#" + i);
-    arr = arr.map(i=> "<br>" + randomSymbol() + ' : ' + i)
-    //something here that writes a random symbol to all numbers divisible by 9.
-    // for (element of arr) {
-    //     if (element%9===0){
-            
-    //     }
-        
-    
-}
-
-function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+  
+    return array;
   }
 
-function randomSymbol(){
-    let result = getRandomInt(14);
-    return symbols[result];
-}
+
 
 
 
