@@ -2,7 +2,7 @@ let symbols = ["!", "@", "=", "$", "%", "^", "&", "*", "+",];
 
 let arr=[]
 
-
+//const zeroTo99 = Array(100).map((_, i) => i);
 
 function attachSymbols(){
 for (let i=1; i<100; i++){
@@ -149,8 +149,23 @@ function shuffle(array) {
     return array;
   }
 
+// destructuring objects example
+//   const arr = [1, 2, 3, 4, 5];
 
+//   const [bossAge, myAge, ,, dogAge] = arr;
 
+//   const pos = [10, 20, 30];
+
+//   const [x, y, z] = pos;
+
+//   let a = 4;
+//   let b = 5;
+
+//   let temp = a;
+//   a = b;
+//   b = temp;
+
+//   [a, b] = [b, a];
 
 
 page1();
